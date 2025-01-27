@@ -1,1 +1,1 @@
-# philscat_db
+# CLSU Biotechnology and Analytical Laboratory Official Repository
