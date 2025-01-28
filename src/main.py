@@ -1,4 +1,7 @@
 #
+# This is a part of CLSU Biotechnology and Analytical Laboratory
+# website along with the BaCaDM Database associated with it.
+#
 # Copyright (C) 2025 James Aaron Erang <iaacornus.devel@gmail.com>
 #
 # This library is free software; you can redistribute it and/or
@@ -15,3 +18,4 @@
 # License along with this library; if not, see <http://www.gnu.org/licenses/>.
 #
 # Author: James Aaron Erang <iaacornus.devel@gmail.com>
+#
