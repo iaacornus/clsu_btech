@@ -70,3 +70,21 @@ function check_requirements () {
     done
     echo -e "$INFO Checked all the libraries and packages."
 }
+
+function install_missing () {
+    echo -e "$INFO Installing missing libraries and packages ..."
+    for _ni in ${not_installed[@]}; do
+        echo -e ">>> Installing: $_ni ..."
+
+        if [[ $_ni == p\_* ]]; then
+            package="${_ni:2}"
+            echo -e "pip: \e[1m$package ...\e[0m"
+            pip3 install $package
+        else
+            echo -e "apt: \e[1m$package ...\e[0m"
+            sudo apt-get install $package
+        fi
+    done
+    echo -e "$INFO Successfully installed all packges."
+}
+
