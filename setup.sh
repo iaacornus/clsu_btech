@@ -30,3 +30,43 @@ function fail() {
     echo -e "$FAIL Project setup failed."
     exit 1
 }
+
+function setup_success () {
+    echo -e "$SUCCESS Installation successfully finished."
+    exit 0
+}
+
+function check_requirements () {
+    utils=(             \
+        "python"        \
+        "pip3"          \
+        "git"           \
+    )
+
+    echo "Checking requirements ..."
+    for _util in ${utils[@]}; do
+        if [[ $_util == p\_* ]]; then
+            echo -e "checking python library: $_util ..."
+            if [ python -c "import $_util" &> /dev/null ]; then
+                echo -e "\e[32mInstalled: $_util ...\e[0m"
+            else
+                echo -e "\e[31m$_util not installed ...\e[0m"
+                not_installed+=("$_util")
+            fi
+        else
+            echo -e "checking package: $_util ..."
+            if [[ -x "$(command -v $_util)" ]]; then
+                echo -e "\e[32mFound $_util in \$PATH ...\e[0m"
+            else
+                echo -e "\e[31m$_util not in \$PATH ...\e[0m"
+                not_installed+=("$_util")
+            fi
+        fi
+    done
+
+    echo -e "=> the following packages are not installed:"
+    for _ni in ${not_installed[@]}; do
+        echo -e "==> $_ni"
+    done
+    echo -e "$INFO Checked all the libraries and packages."
+}
