@@ -21,10 +21,10 @@
 # Author: James Aaron Erang <iaacornus.devel@gmail.com>
 #
 
-FAIL="\e[1;41mFAIL:\e[0m"
-INVALID="\e[1;41mINVALID:\e[0m"
-SUCCESS="\e[1;42mSUCCESS:\e[0m"
-INFO="\e[1;44mINFO:\e[0m"
+FAIL="\e[1;31mFAIL:\e[0m"
+INVALID="\e[1;31mINVALID:\e[0m"
+SUCCESS="\e[1;32mSUCCESS:\e[0m"
+INFO="\e[1;34mINFO:\e[0m"
 
 function fail() {
     echo -e "$FAIL Project setup failed."
