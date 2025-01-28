@@ -88,3 +88,7 @@ function install_missing () {
     echo -e "$INFO Successfully installed all packges."
 }
 
+function main() {
+    check_requirements  || fail
+    install_missing     || fail
+}
